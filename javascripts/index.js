@@ -1,2 +1,1 @@
-require("materialize-loader")
-require('materialize-css/dist/js/materialize.js')
+require('materialize-css/sass/materialize.scss')
