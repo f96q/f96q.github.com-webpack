@@ -14,6 +14,7 @@ let plugins = [
 
 if (process.env.NODE_ENV == 'production') {
   plugins.push(new UglifyEsPlugin())
+  plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true }))
 }
 
 module.exports = {
