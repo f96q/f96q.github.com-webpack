@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const UglifyEsPlugin = require('uglify-es-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 let plugins = [
@@ -13,7 +12,7 @@ let plugins = [
 ]
 
 if (process.env.NODE_ENV == 'production') {
-  plugins.push(new UglifyEsPlugin())
+  plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false }}))
   plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true }))
 }
 
